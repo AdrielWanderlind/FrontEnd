@@ -160,20 +160,20 @@
     height: 3px;
     background-color: #44465e;
 
-    transform: scaleX(0);              /* começa invisível */
-    transform-origin: left;            /* cresce da esquerda */
+    transform: scaleX(0);              
+    transform-origin: left;            
     transition: transform 0.4s ease;
 }
 
 /* Quando passa o mouse */
 .menu a:hover::after {
-    transform: scaleX(1);              /* cresce */
+    transform: scaleX(1);              
     transform-origin: left;
 }
 
-/* Quando tira o mouse */
+
 .menu a:not(:hover)::after {
-    transform-origin: right;           /* encolhe para direita */
+    transform-origin: right;           
 }
 		
 	.txt{
@@ -199,20 +199,20 @@
 .social-btn{
     width: 20px;
     height: 20px;
-    border: 2px solid #44465e;   /* 👈 borda */
+    border: 2px solid #44465e;   
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     transition: 0.3s ease;
-    background: transparent;     /* sem fundo */
+    background: transparent;     
 }
 
 .social-btn svg{
     width: 25px;
     height: 25px;
-    fill: #44465e;               /* mesma cor da borda */
+    fill: #44465e;               
 }
 
 .social-btn:hover{
@@ -310,7 +310,7 @@
 		<h3> Modelo de Referência (OSI e TCP/IP) </h3>
 		<div class="tcp">
 		<div class="txt">
-				<p> Os modelos de referência organizam a comunicação em camadas para facilitar o entendimento e a padronização dos processos de rede. O modelo OSI, desenvolvido pela International Organization for Standardization, divide a comunicação em sete camadas, cada uma com funções específicas, desde a transmissão física até a interface com o usuário. Já o modelo TCP/IP, amplamente utilizado na internet, é estruturado em quatro camadas e é mais aplicado na prática. Esses modelos auxiliam na compreensão do envio, recebimento e encapsulamento dos dados. </p> 
+				<p> Os modelos de referência organizam a comunicação em rede em camadas, facilitando o entendimento, a padronização e a solução de problemas. O Modelo OSI (Open Systems Interconnection) possui 7 camadas (Física, Enlace, Rede, Transporte, Sessão, Apresentação e Aplicação), separando desde a transmissão elétrica dos bits até a interação com o usuário. Já o modelo TCP/IP, utilizado na internet, possui 4 camadas (Acesso à Rede, Internet, Transporte e Aplicação) e é mais prático. Esses modelos ajudam a entender como ocorre o encapsulamento de dados, onde cada camada adiciona informações antes do envio. </p> 
 		</div>
 			<div class="imagem">
 				<a href="mid/tcp.png" target="_blank">
@@ -329,7 +329,7 @@
 				</a>
 			</div>
 	<div class="txt">
-	<p> O endereço IP identifica dispositivos na rede. Pode ser IPv4 (ex: 192.168.0.1) ou IPv6 (formato hexadecimal). O IPv4 possui classes (A, B, C) e utiliza máscara de sub-rede para dividir redes. Conceitos como gateway, DNS e DHCP também são fundamentais para comunicação e configuração automática de rede. </p> 
+	<p> O endereço IP é um identificador único para cada dispositivo em uma rede. O IPv4 usa 32 bits (ex: 192.168.0.1) e é dividido em classes (A, B e C), além de utilizar máscara de sub-rede para separar rede e host. Já o IPv6 usa 128 bits em formato hexadecimal, criado para resolver o esgotamento de endereços. Conceitos como gateway (saída para outras redes), DNS (tradução de nomes para IP) e DHCP (configuração automática de IP) são fundamentais para o funcionamento da comunicação. </p> 
 		</div>
 	</div>
 	</section>
@@ -338,7 +338,7 @@
 		<h3> Protocolos de Comunicação </h3>
 		<div class="prot">
 		<div class="txt">
-			<p> Protocolos são regras que definem como os dados são transmitidos. O TCP é confiável e orientado à conexão, garantindo entrega correta. O UDP é mais rápido e não garante entrega. Outros protocolos importantes incluem HTTP/HTTPS, FTP, SMTP, POP3, IMAP e ARP. </p>
+			<p> Protocolos são regras que definem como os dados são transmitidos e recebidos. O TCP é confiável e orientado à conexão, garantindo entrega correta e na ordem certa. O UDP é mais rápido, porém não garante entrega. Outros protocolos importantes incluem HTTP/HTTPS (web), FTP (transferência de arquivos), SMTP/POP3/IMAP (e-mail) e ARP (descoberta de endereço físico). Cada protocolo atua em camadas específicas do modelo de rede. </p>
 		</div> 
 			<div class="imagem">
 				<a href="mid/prot.png" target="_blank">
@@ -357,7 +357,7 @@
 				</a>
 			</div>
 		<div class="txt">
-			<p> Os principais dispositivos são roteador, switch, hub, modem e access point. O roteador conecta redes diferentes, o switch conecta dispositivos na mesma rede, e o access point fornece acesso Wi-Fi. Cada equipamento atua em camadas específicas do modelo OSI. </p> 
+			<p> Os equipamentos são responsáveis por permitir e controlar a comunicação. O roteador conecta redes diferentes e encaminha pacotes. O switch conecta dispositivos dentro da mesma rede local, operando na camada de enlace. O hub apenas replica sinais (tecnologia antiga). O modem permite conexão com o provedor de internet, e o access point fornece conexão sem fio (Wi-Fi). Cada dispositivo atua em camadas específicas do modelo OSI. </p> 
 		</div
 		</div>
 	</section>
@@ -367,7 +367,7 @@
 
 		<div class="top">
 		<div class="txt">
-			<p> Os principais dispositivos são roteador, switch, hub, modem e access point. O roteador conecta redes diferentes, o switch conecta dispositivos na mesma rede, e o access point fornece acesso Wi-Fi. Cada equipamento atua em camadas específicas do modelo OSI. </p>
+			<p> Topologias de rede representam a forma como os dispositivos estão organizados e conectados dentro de uma rede, influenciando desempenho, custo, manutenção e confiabilidade. Na topologia em estrela, todos os dispositivos se conectam a um ponto central (como um switch), sendo a mais utilizada atualmente; na barramento, todos compartilham um único cabo principal, modelo mais antigo e sujeito a falhas gerais; na anel, os dispositivos formam um círculo por onde os dados circulam em sequência; na árvore, há uma estrutura hierárquica semelhante a várias estrelas interligadas, comum em redes corporativas; e na malha, cada dispositivo pode se conectar a vários outros, oferecendo alta redundância e confiabilidade, porém com maior custo e complexidade. </p>
 		</div> 
 			<div class="imagem">
 				<a href="mid/top.png" target="_blank">
@@ -388,7 +388,7 @@
 				</a>
 			</div>
 		<div class="txt">
-			<p> Envolve proteger dados contra acessos não autorizados. São utilizados firewall, criptografia, VPN, controle de acesso e autenticação. Conceitos como ataques DDoS, phishing e malware também são estudados. </p> 
+			<p> Segurança de redes envolve proteger dados e sistemas contra acessos não autorizados. São utilizados firewalls (controle de tráfego), criptografia (proteção de dados), VPN (conexão segura remota), controle de acesso e autenticação. Também são estudadas ameaças como DDoS (sobrecarga de servidor), phishing (fraude para roubo de dados) e malware (softwares maliciosos). O objetivo é garantir confidencialidade, integridade e disponibilidade das informações. </p> 
 		</div>
 	</div>
 	</section>
@@ -400,7 +400,7 @@
 
 		<div class="cab">
 		<div class="txt">
-			<p> A transmissão pode ser feita por cabos de par trançado (UTP), fibra óptica ou coaxial, além de meios sem fio (wireless). A escolha influencia velocidade, latência e interferência. </p> 
+			<p> Os dados podem ser transmitidos por meios físicos ou sem fio. O cabo de par trançado (UTP) é comum em redes locais. O cabo coaxial foi muito utilizado em redes antigas e TV. A fibra óptica oferece maior velocidade, menor latência e imunidade a interferências eletromagnéticas. Já o wireless (Wi-Fi) transmite por ondas de rádio. A escolha do meio influencia custo, velocidade e estabilidade. </p> 
 		</div>
 			<div class="imagem">
 				<a href="mid/cab.png" target="_blank">
@@ -421,7 +421,7 @@
 				</a>
 			</div>
 		<div class="txt">
-			<p> A técnica de subnetting divide uma rede em partes menores, melhorando organização e segurança. O CIDR (Classless Inter-Domain Routing) permite uso mais eficiente de endereços IP. </p> 
+			<p> Subnetting é a divisão de uma rede maior em redes menores, melhorando organização, desempenho e segurança. Isso é feito utilizando máscara de sub-rede. O CIDR (Classless Inter-Domain Routing) permite alocação mais eficiente de endereços IP, substituindo o sistema fixo de classes (A, B e C). Esse conceito é essencial para planejamento de redes corporativas e otimização de endereços. </p> 
 		</div>
 	</div>
 	</section>
@@ -432,7 +432,7 @@
 
 		<div class="serv">
 		<div class="txt">
-			<p> Incluem servidores web, servidores de arquivos, servidores de e-mail e bancos de dados. Em ADS, é importante entender como aplicações backend dependem da infraestrutura de rede para funcionar corretamente. </p> 
+			<p> Serviços de rede são recursos disponibilizados por servidores para atender clientes. Exemplos incluem servidores web, servidores de arquivos, servidores de e-mail e bancos de dados. No contexto de Análise e Desenvolvimento de Sistemas (ADS), é fundamental entender que aplicações backend dependem desses serviços e da infraestrutura de rede para funcionar corretamente, garantindo acesso, armazenamento e processamento de informações. </p> 
 		</div>
 			<div class="imagem">
 				<a href="mid/serv.png" target="_blank">
@@ -441,7 +441,86 @@
 			</div>
 	</div>
 	</section>
-	
+<hr>
+
+<section id="formulario">
+    <h3> Formulário de Revisão </h3>
+
+    <div class="forms" style="padding:40px; display:flex; justify-content:center;">
+        <form id="quizForm" style="background:#44465e; padding:30px; border-radius:20px; width:800px; color:white; font-family:'Comfortaa', sans-serif; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+
+            <!-- 1 -->
+            <p><strong>1) Qual é a principal diferença entre o modelo OSI e o TCP/IP?</strong></p>
+            <input type="radio" name="q1" value="errado"> O OSI tem 4 camadas<br>
+            <input type="radio" name="q1" value="certo"> O OSI tem 7 camadas e o TCP/IP tem 4<br>
+            <input type="radio" name="q1" value="errado"> O TCP/IP não possui camadas<br>
+            <input type="radio" name="q1" value="errado"> Ambos possuem 7 camadas<br><br>
+
+            <!-- 2 -->
+            <p><strong>2) Qual é a função do DNS?</strong></p>
+            <input type="radio" name="q2" value="errado"> Dividir redes<br>
+            <input type="radio" name="q2" value="certo"> Traduzir nomes de domínio em IP<br>
+            <input type="radio" name="q2" value="errado"> Proteger contra vírus<br>
+            <input type="radio" name="q2" value="errado"> Fornecer Wi-Fi<br><br>
+
+            <!-- 3 -->
+            <p><strong>3) Por que o TCP é considerado confiável?</strong></p>
+            <input type="radio" name="q3" value="certo"> Garante entrega e ordem dos dados<br>
+            <input type="radio" name="q3" value="errado"> É mais rápido que todos<br>
+            <input type="radio" name="q3" value="errado"> Não verifica erros<br>
+            <input type="radio" name="q3" value="errado"> Não usa conexão<br><br>
+
+            <!-- 4 -->
+            <p><strong>4) Qual equipamento opera conectando redes diferentes?</strong></p>
+            <input type="radio" name="q4" value="errado"> Switch<br>
+            <input type="radio" name="q4" value="certo"> Roteador<br>
+            <input type="radio" name="q4" value="errado"> Hub<br>
+            <input type="radio" name="q4" value="errado"> Patch Panel<br><br>
+
+            <!-- 5 -->
+            <p><strong>5) Qual topologia oferece maior segurança contra falhas?</strong></p>
+            <input type="radio" name="q5" value="errado"> Barramento<br>
+            <input type="radio" name="q5" value="errado"> Estrela<br>
+            <input type="radio" name="q5" value="certo"> Malha<br>
+            <input type="radio" name="q5" value="errado"> Anel simples<br><br>
+
+            <!-- 6 -->
+            <p><strong>6) Qual é o objetivo principal de um firewall?</strong></p>
+            <input type="radio" name="q6" value="errado"> Aumentar velocidade<br>
+            <input type="radio" name="q6" value="certo"> Controlar e filtrar tráfego de rede<br>
+            <input type="radio" name="q6" value="errado"> Conectar cabos<br>
+            <input type="radio" name="q6" value="errado"> Armazenar arquivos<br><br>
+
+            <!-- 7 -->
+            <p><strong>7) Qual meio de transmissão possui maior imunidade a interferências?</strong></p>
+            <input type="radio" name="q7" value="errado"> UTP<br>
+            <input type="radio" name="q7" value="errado"> Coaxial<br>
+            <input type="radio" name="q7" value="certo"> Fibra óptica<br>
+            <input type="radio" name="q7" value="errado"> Bluetooth<br><br>
+
+            <!-- 8 -->
+            <p><strong>8) Para que serve o CIDR?</strong></p>
+            <input type="radio" name="q8" value="errado"> Criptografar dados<br>
+            <input type="radio" name="q8" value="certo"> Melhorar a distribuição de endereços IP<br>
+            <input type="radio" name="q8" value="errado"> Fornecer internet<br>
+            <input type="radio" name="q8" value="errado"> Detectar malware<br><br>
+
+            <!-- 9 -->
+            <p><strong>9) Por que os serviços de rede são importantes para aplicações backend?</strong></p>
+            <input type="radio" name="q9" value="errado"> Apenas para Wi-Fi<br>
+            <input type="radio" name="q9" value="certo"> Porque permitem armazenamento, processamento e acesso aos dados<br>
+            <input type="radio" name="q9" value="errado"> Só para redes domésticas<br>
+            <input type="radio" name="q9" value="errado"> Não são necessários<br><br>
+
+            <div style="text-align:center;">
+                <button type="submit" style="padding:10px 25px; border:none; border-radius:20px; background:white; color:#44465e; font-weight:bold; cursor:pointer;">
+                    <p> Enviar </p>
+                </button>
+            </div>
+
+
+        </form>
+    </div>
 	</main>
 	
 </body>
