@@ -1,53 +1,72 @@
+const btn = document.getElementById("btnImage");
 const cria = document.getElementById("b");
-const btn = document.getElementById("btn");
+const toggle = document.querySelector('input[type="checkbox"]');
+const body = document.getElementById("body");
 
 const estados = {
-    normal:  "b_n.png",
+    normal: "b_n.png",
     puto: "b_p.png",
     morto: "b_d.png",
     comendo: "b_c.png",
     alimentado: "b_a.png",
+};
+
+let contador = 0;
+let intervalo = null;
+let animando = false;
+
+toggle.addEventListener("change", () => {
+
+    console.log("clicou");
+
+    if (toggle.checked) {
+        // 🌙 NOITE
+        body.style.backgroundImage = "url('bg_n.png')";
+    } else {
+        // ☀️ DIA
+        body.style.backgroundImage = "url('bg.png')";
+    }
+
+    // mantém o fundo bonito
+    body.style.backgroundSize = "cover";
+    body.style.backgroundPosition = "center";
+});
+
+function mostrarFerlini() {
+    const img = document.getElementById("ferliniImg");
+
+    img.classList.toggle("hidden");
 }
 
-let contador = 0; 
-let intervalo = null;
-let time_click = null;
-let time_out = null;
+function controlador() {
+    if (intervalo) clearInterval(intervalo);
 
-function controlador (){
-    if(intervalo) clearInterval(intervalo)
-        
-        intervalo = setInterval(() => {
-            contador++;
+    intervalo = setInterval(() => {
+        contador++;
 
-            console.log("tempo:",contador);
-            
-            if (contador == 30){
-                cria.src = estados.puto;
-            }
+        console.log("tempo:", contador);
 
-            if(contador == 60){
-                cria.src = estados.morto;
-            }
-        }, 1000);
+        if (contador === 30) {
+            cria.src = estados.puto;
+        }
+
+        if (contador === 60) {
+            cria.src = estados.morto;
+        }
+    }, 1000);
 }
 
 function alimentar() {
+    if (animando) return;
 
-    img.src = imagens.clicado;
+    animando = true;
     contador = 0;
 
-    console.log("Comendo");
+    cria.src = estados.comendo;
 
-    if (timeoutClique) clearTimeout(timeoutClique);
-
-    timeoutClique = setTimeout(() => {
-        img.src = imagens.feliz;
-
-        timeoutBack = setTimeout(() => {
-            img.src = imagens.normal;
-        }, 2000);
-
+    setTimeout(() => {
+        cria.src = estados.alimentado;
+        animando = false;
     }, 1000);
 }
 
