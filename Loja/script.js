@@ -18,7 +18,7 @@ function addProduto(){
       const qtdElemento = document.getElementById("qtd");
 
       const codValue = codElemento.value;
-      const qtdValue = qtdElemento.value;
+      const qtdValue = parseInt(qtdElemento.value);
 
       if(!produtos[codValue]){
         alert("Produto não Cadastrado");
@@ -35,15 +35,18 @@ function addProduto(){
 
       carrinho.push(item);
       audio.currentTime=0;
+	audio.playbackRate = 1.5; 
       audio.play();
 
-	codElement.value = "";
-	qtdElement.value = 1;
+	codElemento.value = "";
+	qtdElemento.value = 1;
 
-	atualizaTela()	
+	atualizaTela();	
+
 
 function atualizaTela(){
 	const lista = document.getElementById("lista");
+	lista.innerHTML = "";
 
 	let total = 0;
 
@@ -52,12 +55,12 @@ function atualizaTela(){
 		
 		const li = document.createElement("li");
 		li.className = "list-group-item";
-
 		li.innerHTML = `<div class="d-flex"> <strong>${item.nome}
-		</strong> <small>${item.quantidade} X ${item.valor}= 
+		</strong> <small>${item.quantidade} X ${item.preco}= 
 		<strong> ${item.subTot}</strong></small></div>
 		`;
-
+		
+		
 		lista.appendChild(li);
 	});
 }
