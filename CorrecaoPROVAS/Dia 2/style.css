@@ -1,0 +1,50 @@
+body {
+    background-color: #f4f7f6;
+    font-family: Arial;
+}
+
+header {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+.btn-proximo {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin: 30px auto;
+}
+
+.btn-proximo:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #2980b9, #1c2833);
+}
+
+.btn-proximo:active {
+    transform: scale(0.95);
+}
