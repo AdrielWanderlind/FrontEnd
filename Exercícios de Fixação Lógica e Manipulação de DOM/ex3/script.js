@@ -1,0 +1,43 @@
+const botao = document.getElementById("calcular");
+
+botao.addEventListener("click", () => {
+  const nome = document.getElementById("nome").value;
+
+  const nota1 = Number(document.getElementById("nota1").value);
+  const nota2 = Number(document.getElementById("nota2").value);
+  const nota3 = Number(document.getElementById("nota3").value);
+
+  const resultado = document.getElementById("resultado");
+
+  const media = (nota1 + nota2 + nota3) / 3;
+
+  if (media >= 7 && media <= 10) {
+    resultado.innerHTML = `
+      ${nome} foi APROVADO! <br>
+      Média: ${media.toFixed(2)}
+    `;
+
+    resultado.className = "aprovado";
+
+  } else if (media >= 4 && media < 7) {
+
+    const falta = (10 - media).toFixed(2);
+
+    resultado.innerHTML = `
+      ${nome} está de EXAME! <br>
+      Média: ${media.toFixed(2)} <br>
+      Faltam ${falta} pontos para chegar em 10.
+    `;
+
+    resultado.className = "exame";
+
+  } else {
+
+    resultado.innerHTML = `
+      ${nome} foi REPROVADO! <br>
+      Média: ${media.toFixed(2)}
+    `;
+
+    resultado.className = "reprovado";
+  }
+});
