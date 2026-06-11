@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Segurança Infinity</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🛡️ Validador de Segurança Infinity</h1>
+
+        <label>Número do Cartão</label>
+        <input type="text" id="cartao" maxlength="19" placeholder="Digite o número do cartão">
+
+        <button onclick="analisarCartao()">
+            Analisar Cartão
+        </button>
+
+        <div class="painel">
+            <h2>Painel de Info</h2>
+
+            <p><strong>Status:</strong> <span id="status">-</span></p>
+            <p><strong>Bandeira:</strong> <span id="bandeira">-</span></p>
+            <p><strong>Setor:</strong> <span id="setor">-</span></p>
+            <p><strong>Banco Emissor:</strong> <span id="banco">-</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
