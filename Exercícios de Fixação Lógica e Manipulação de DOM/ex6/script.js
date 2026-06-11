@@ -1,55 +1,24 @@
-const botao = document.getElementById("calcular");
+function calcular() {
 
-botao.addEventListener("click", () => {
+    let valorPacote = Number(document.getElementById("pacote").value);
+    let quantidade = Number(document.getElementById("pessoas").value);
 
-  const bandeira = document.getElementById("bandeira").value;
-  const valor = Number(document.getElementById("valor").value);
-  const parcelas = Number(document.getElementById("parcelas").value);
+    let custoBruto = valorPacote * quantidade;
 
-  const resultado = document.getElementById("resultado");
+    let taxaServico = custoBruto * 0.10;
 
-  let taxaBandeira = 0;
+    let subtotal = custoBruto + taxaServico;
 
-  // Taxa da bandeira
-  switch (bandeira) {
-    case "visa":
-      taxaBandeira = valor * 0.02;
-      break;
+    let desconto = 0;
 
-    case "master":
-      taxaBandeira = valor * 0.0185;
-      break;
+    if (quantidade > 100) {
+        desconto = subtotal * 0.05;
+    }
 
-    case "elo":
-      taxaBandeira = valor * 0.03;
-      break;
-  }
+    let totalFinal = subtotal - desconto;
 
-  // Juros simples
-  const juros = valor * (0.015 * parcelas);
-
-  // Taxa fixa mensal
-  const taxaMensal = 12.50 * parcelas;
-
-  // Valor total
-  const valorTotal = valor + taxaBandeira + juros + taxaMensal;
-
-  // Valor da parcela
-  const valorParcela = valorTotal / parcelas;
-
-  resultado.innerHTML = `
-    <strong>Resumo da Venda:</strong><br><br>
-
-    💰 Valor da Venda: R$ ${valor.toFixed(2)} <br>
-
-    💳 Taxa da Bandeira: R$ ${taxaBandeira.toFixed(2)} <br>
-
-    📈 Valor dos Juros: R$ ${juros.toFixed(2)} <br>
-
-    🏦 Taxa Mensal: R$ ${taxaMensal.toFixed(2)} <br>
-
-    📦 Total da Compra: R$ ${valorTotal.toFixed(2)} <br>
-
-    🧾 Valor de Cada Parcela: R$ ${valorParcela.toFixed(2)}
-  `;
-});
+    document.getElementById("bruto").innerHTML = custoBruto.toFixed(2);
+    document.getElementById("taxa").innerHTML = taxaServico.toFixed(2);
+    document.getElementById("desconto").innerHTML = desconto.toFixed(2);
+    document.getElementById("total").innerHTML = totalFinal.toFixed(2);
+}

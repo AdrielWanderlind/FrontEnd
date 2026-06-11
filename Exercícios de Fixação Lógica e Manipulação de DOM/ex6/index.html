@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infinity Bank</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Bank - Eventos</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>💳 Infinity Bank</h1>
+    <div class="container">
+        <h1>Orçamento de Evento</h1>
 
-    <label>Bandeira do Cartão</label>
-    <select id="bandeira">
-      <option value="visa">Visa</option>
-      <option value="master">Master</option>
-      <option value="elo">Elo</option>
-    </select>
+        <label for="pacote">Pacote</label>
+        <select id="pacote">
+            <option value="50">Standard - R$ 50,00</option>
+            <option value="80">Premium - R$ 80,00</option>
+            <option value="120">Infinity Deluxe - R$ 120,00</option>
+        </select>
 
-    <label>Valor da Venda</label>
-    <input type="number" id="valor" placeholder="Digite o valor">
+        <label for="pessoas">Quantidade de Pessoas</label>
+        <input type="number" id="pessoas" min="1">
 
-    <label>Número de Parcelas</label>
-    <input type="number" id="parcelas" placeholder="Digite as parcelas">
+        <button onclick="calcular()">Calcular Orçamento</button>
 
-    <button id="calcular">Calcular</button>
+        <div class="resultado">
+            <p>Custo Bruto: R$ <span id="bruto">0.00</span></p>
+            <p>Taxa de Serviço: R$ <span id="taxa">0.00</span></p>
+            <p>Desconto: R$ <span id="desconto">0.00</span></p>
+            <p class="total">Total Final: R$ <span id="total">0.00</span></p>
+        </div>
+    </div>
 
-    <div id="resultado"></div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
